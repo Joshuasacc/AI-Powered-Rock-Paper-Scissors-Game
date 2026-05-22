@@ -9,8 +9,8 @@ class AIPoweredRPS:
         self.root = root
         self.root.title("AI-Powered Rock Paper Scissors")
         self.root.geometry("500x500")
-        self.root.resizable(False, False)
-
+        self.root.resizable(True, True)   
+        self.root.configure(bg="lightgreen")
         self.moves = ["rock", "paper", "scissors"]
         self.player_history = []
         self.player_score = 0
@@ -48,7 +48,7 @@ class AIPoweredRPS:
         )
         self.ai_move_label.pack(pady=5)
 
-        self.button_frame = tk.Frame(self.root)
+        self.button_frame = tk.Frame(self.root, bg='lightgreen')
         self.button_frame.pack(pady=20)
 
         self.rock_button = tk.Button(
