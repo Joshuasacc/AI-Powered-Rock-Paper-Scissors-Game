@@ -3,14 +3,14 @@ from collections import Counter
 import tkinter as tk
 from tkinter import messagebox
 
-
+backGroundColor = "lightgreen"
 class AIPoweredRPS:
     def __init__(self, root):
         self.root = root
         self.root.title("AI-Powered Rock Paper Scissors")
         self.root.geometry("500x500")
         self.root.resizable(True, True)   
-        self.root.configure(bg="lightgreen")
+        self.root.configure(bg=backGroundColor)
         self.moves = ["rock", "paper", "scissors"]
         self.player_history = []
         self.player_score = 0
@@ -23,13 +23,14 @@ class AIPoweredRPS:
         self.title_label = tk.Label(
             self.root,
             text="AI-Powered Rock Paper Scissors",
+            bg= backGroundColor,
             font=("Arial", 20, "bold")
         )
         self.title_label.pack(pady=20)
-
         self.result_label = tk.Label(
             self.root,
             text="Choose your move!",
+            bg=backGroundColor,
             font=("Arial", 14)
         )
         self.result_label.pack(pady=10)
@@ -37,6 +38,7 @@ class AIPoweredRPS:
         self.player_move_label = tk.Label(
             self.root,
             text="Your Move: None",
+            bg=backGroundColor,
             font=("Arial", 12)
         )
         self.player_move_label.pack()
@@ -44,11 +46,12 @@ class AIPoweredRPS:
         self.ai_move_label = tk.Label(
             self.root,
             text="AI Move: None",
+            bg=backGroundColor,
             font=("Arial", 12)
         )
         self.ai_move_label.pack(pady=5)
 
-        self.button_frame = tk.Frame(self.root, bg='lightgreen')
+        self.button_frame = tk.Frame(self.root, bg=backGroundColor)
         self.button_frame.pack(pady=20)
 
         self.rock_button = tk.Button(
