@@ -16,7 +16,7 @@ class AIPoweredRPS:
         self.root.geometry("750x700")
         self.root.resizable(True, True)
         self.root.configure(bg=backGroundColor)
-
+        
         self.moves = ["rock", "paper", "scissors"]
         self.player_history = []
 
@@ -110,7 +110,7 @@ class AIPoweredRPS:
 
         self.rock_button = ttk.Button(
             self.button_frame,
-            text="🪨 Rock",
+            text="🪨 Rock", 
             style="Game.TButton",
             command=lambda: self.play_round("rock")
         )
@@ -175,7 +175,7 @@ class AIPoweredRPS:
         self.toggle_chart_button.grid(row=0, column=0, padx=10)
 
         self.reset_button = ttk.Button(
-            self.control_frame,
+            self.control_frame, 
             text="🔄 Reset Game",
             style="Game.TButton",
             command=self.reset_game
@@ -188,7 +188,7 @@ class AIPoweredRPS:
             bg=backGroundColor
         )
 
-    def predict_player_move(self):
+    def predict_player_move(self): 
         if not self.player_history:
             return random.choice(self.moves)
 
@@ -218,7 +218,7 @@ class AIPoweredRPS:
 
         return "player" if win[player_move] == ai_move else "ai"
 
-    def play_round(self, player_move):
+    def play_round(self, player_move): # WE FINISH HERE
 
         ai_move = self.get_ai_move()
         result = self.determine_winner(player_move, ai_move)
